@@ -36,7 +36,7 @@ ul {
 
 li {
 	list-style: none;
-	/* border: 1px solid black; */
+	border: 0.1px dashed lightblue;
 	display: flex;
 	align-items: center;
 	justify-content: center;
