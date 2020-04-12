@@ -1,5 +1,5 @@
 "use strict";
-import { genPuzzleMatrix, is_correct, all_correct } from "/js/logic.js";
+import { genPuzzleMatrix, isCorrect, allCorrect } from "/js/logic.js";
 
 const solveButton = document.querySelector(".solve");
 const resetButton = document.querySelector(".reset");
@@ -63,9 +63,9 @@ function solve() {
 						box.textContent = x;
 						window.matrix[i][j] = x;
 
-						if (is_correct(window.matrix, i, j)) {
+						if (isCorrect(window.matrix, i, j)) {
 							solve();
-							if (all_correct(window.matrix)) {
+							if (allCorrect(window.matrix)) {
 								found = true;
 								break;
 							}

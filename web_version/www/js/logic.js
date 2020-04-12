@@ -9,7 +9,7 @@ function shuffle(a) {
 	return a;
 }
 
-function gen_solution(m) {
+function genSolution(m) {
 	for (let i = 0; i < 9; i++) {
 		for (let j = 0; j < 9; j++) {
 			if (m[i][j] == 0) {
@@ -19,9 +19,9 @@ function gen_solution(m) {
 				for (const x of range_list) {
 					m[i][j] = x;
 
-					if (is_correct(m, i, j)) {
-						gen_solution(m);
-						if (all_correct(m)) {
+					if (isCorrect(m, i, j)) {
+						genSolution(m);
+						if (allCorrect(m)) {
 							found = true;
 							break;
 						}
@@ -48,7 +48,7 @@ function genPuzzleMatrix() {
 		}
 		blank_matrix.push(row);
 	}
-	const matrix = gen_solution(blank_matrix);
+	const matrix = genSolution(blank_matrix);
 
 	for (let i = 0; i < 2; i++) {
 		for (let i = 0; i < 9; i++) {
@@ -63,7 +63,7 @@ function genPuzzleMatrix() {
 	return matrix;
 }
 
-function all_correct(m) {
+function allCorrect(m) {
 	for (const row of m) {
 		for (const item of row) {
 			if (item == 0) {
@@ -74,7 +74,7 @@ function all_correct(m) {
 	return true;
 }
 
-function is_correct(m, I, J) {
+function isCorrect(m, I, J) {
 	for (let i = 0; i < 9; i++) {
 		if (m[i][J] == m[I][J] && i != I) {
 			return false;
@@ -103,4 +103,4 @@ function is_correct(m, I, J) {
 	return true;
 }
 
-export { genPuzzleMatrix, is_correct, all_correct };
+export { genPuzzleMatrix, isCorrect, allCorrect };
