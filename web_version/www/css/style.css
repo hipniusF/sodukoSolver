@@ -56,6 +56,10 @@ button {
 	background: grey;
 }
 
+.solvingLabel {
+	margin-top: 5rem;
+}
+
 .default {
 	color: green;
 }
@@ -66,4 +70,8 @@ li.borderRight {
 
 li.borderBottom {
 	border-bottom: 3px solid black;
+}
+
+.hide {
+	transform: translate(10000rem);
 }

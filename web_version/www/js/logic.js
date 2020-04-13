@@ -1,3 +1,7 @@
+function sleep(ms) {
+	return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 function shuffle(a) {
 	var j, x, i;
 	for (i = a.length - 1; i > 0; i--) {
@@ -103,4 +107,4 @@ function isCorrect(m, I, J) {
 	return true;
 }
 
-export { genPuzzleMatrix, isCorrect, allCorrect };
+export { genPuzzleMatrix, isCorrect, allCorrect, sleep };
